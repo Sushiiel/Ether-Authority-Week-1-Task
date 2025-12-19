@@ -1,0 +1,251 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "setBy",
+						"type": "address"
+					}
+				],
+				"name": "CountSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "decrementedBy",
+						"type": "address"
+					}
+				],
+				"name": "Decremented",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "incrementedBy",
+						"type": "address"
+					}
+				],
+				"name": "Incremented",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "resetBy",
+						"type": "address"
+					}
+				],
+				"name": "Reset",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "count",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decrement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "decrementBy",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "increment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "incrementBy",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reset",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newCount",
+						"type": "uint256"
+					}
+				],
+				"name": "setCount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A simple counter contract to demonstrate state management",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor initializes counter to 0"
+				},
+				"decrement()": {
+					"details": "Decrements the counter by 1"
+				},
+				"decrementBy(uint256)": {
+					"details": "Decrements counter by a specific amount",
+					"params": {
+						"amount": "The amount to decrement by"
+					}
+				},
+				"getCount()": {
+					"details": "Returns the current count",
+					"returns": {
+						"_0": "uint256 The current counter value"
+					}
+				},
+				"increment()": {
+					"details": "Increments the counter by 1"
+				},
+				"incrementBy(uint256)": {
+					"details": "Increments counter by a specific amount",
+					"params": {
+						"amount": "The amount to increment by"
+					}
+				},
+				"reset()": {
+					"details": "Resets the counter to 0"
+				},
+				"setCount(uint256)": {
+					"details": "Sets counter to a specific value",
+					"params": {
+						"newCount": "The new counter value"
+					}
+				}
+			},
+			"title": "Counter",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"decrement()": {
+					"notice": "Will revert if count is already 0"
+				}
+			},
+			"notice": "This contract maintains a counter that can be incremented and decremented",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Counter.sol": "Counter"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Counter.sol": {
+			"keccak256": "0x1f6140e1894881f2c7461b8cac78e905d06dbd3b22744d8aaa0cc235c2d4fedf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://56ffceed1b00ea46540bb6da3d3d69179b74f93c808d530b8dba5981cb9307f0",
+				"dweb:/ipfs/QmQj9pncBu138H3t7EiCutArhxmZmc2zBwpcDAqtB1o1NH"
+			]
+		}
+	},
+	"version": 1
+}

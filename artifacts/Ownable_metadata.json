@@ -1,0 +1,221 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "action",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "executor",
+						"type": "address"
+					}
+				],
+				"name": "OwnerActionExecuted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "action",
+						"type": "string"
+					}
+				],
+				"name": "executeOwnerAction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "previousOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Contract module which provides basic access control mechanism",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor sets the deployer as the initial owner"
+				},
+				"executeOwnerAction(string)": {
+					"details": "Example of an owner-only function",
+					"params": {
+						"action": "Description of the action being performed"
+					}
+				},
+				"getOwner()": {
+					"details": "Returns the address of the current owner",
+					"returns": {
+						"_0": "address The owner's address"
+					}
+				},
+				"isOwner(address)": {
+					"details": "Check if an address is the owner",
+					"params": {
+						"account": "The address to check"
+					},
+					"returns": {
+						"_0": "bool True if the address is the owner"
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Renounces ownership, leaving the contract without an owner"
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership to a new address",
+					"params": {
+						"newOwner": "The address of the new owner"
+					}
+				}
+			},
+			"title": "Ownable",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"renounceOwnership()": {
+					"notice": "This will make owner-only functions permanently unusable"
+				}
+			},
+			"notice": "Only the contract owner can execute certain functions",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ownable.sol": "Ownable"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ownable.sol": {
+			"keccak256": "0xac5b6654919660a6e8e88dd2df13b2834a474b898ffd86207489218a99fc620e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://16f75e2344bde8dd4c36487bc89fa14e8cdac1bc304e1f90af61415717f1ad7f",
+				"dweb:/ipfs/QmZPbu1Ludcu5bCYUm8Wk7TjSHWKNLGLgbvx6rvUEkNamu"
+			]
+		}
+	},
+	"version": 1
+}

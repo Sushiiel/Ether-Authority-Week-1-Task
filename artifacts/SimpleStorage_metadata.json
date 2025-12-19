@@ -1,0 +1,572 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "storedBy",
+						"type": "address"
+					}
+				],
+				"name": "AddressStored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "value",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "storedBy",
+						"type": "address"
+					}
+				],
+				"name": "BooleanStored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "storedBy",
+						"type": "address"
+					}
+				],
+				"name": "NumberStored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					}
+				],
+				"name": "PersonAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "storedBy",
+						"type": "address"
+					}
+				],
+				"name": "StringStored",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "addToArray",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "dataMapping",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getArray",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getArrayLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_key",
+						"type": "uint256"
+					}
+				],
+				"name": "getFromMapping",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getPerson",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getString",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "numberArray",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "people",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "peopleCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "storeAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_value",
+						"type": "bool"
+					}
+				],
+				"name": "storeBoolean",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_key",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_value",
+						"type": "string"
+					}
+				],
+				"name": "storeInMapping",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "storeNumber",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_text",
+						"type": "string"
+					}
+				],
+				"name": "storeString",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "storedAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "storedBoolean",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "storedNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "storedString",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Store and retrieve various types of data on the blockchain",
+			"kind": "dev",
+			"methods": {
+				"addPerson(string,uint256)": {
+					"details": "Add a person",
+					"params": {
+						"_age": "Person's age",
+						"_name": "Person's name"
+					}
+				},
+				"addToArray(uint256)": {
+					"details": "Add a number to array",
+					"params": {
+						"_number": "The number to add"
+					}
+				},
+				"getArray()": {
+					"details": "Get entire array",
+					"returns": {
+						"_0": "uint256[] The complete array"
+					}
+				},
+				"getArrayLength()": {
+					"details": "Get array length",
+					"returns": {
+						"_0": "uint256 The number of elements in array"
+					}
+				},
+				"getFromMapping(uint256)": {
+					"details": "Get data from mapping",
+					"params": {
+						"_key": "The key to look up"
+					},
+					"returns": {
+						"_0": "string The value associated with the key"
+					}
+				},
+				"getNumber()": {
+					"details": "Retrieve the stored number",
+					"returns": {
+						"_0": "uint256 The stored number"
+					}
+				},
+				"getPerson(uint256)": {
+					"details": "Get person details",
+					"params": {
+						"_id": "The person's ID"
+					},
+					"returns": {
+						"age": "The person's age",
+						"name": "The person's name",
+						"wallet": "The person's wallet address"
+					}
+				},
+				"getString()": {
+					"details": "Retrieve the stored string",
+					"returns": {
+						"_0": "string The stored string"
+					}
+				},
+				"storeAddress(address)": {
+					"details": "Store an address",
+					"params": {
+						"_address": "The address to store"
+					}
+				},
+				"storeBoolean(bool)": {
+					"details": "Store a boolean",
+					"params": {
+						"_value": "The boolean value to store"
+					}
+				},
+				"storeInMapping(uint256,string)": {
+					"details": "Store data in mapping",
+					"params": {
+						"_key": "The key for the mapping",
+						"_value": "The value to store"
+					}
+				},
+				"storeNumber(uint256)": {
+					"details": "Store a number",
+					"params": {
+						"_number": "The number to store"
+					}
+				},
+				"storeString(string)": {
+					"details": "Store a string",
+					"params": {
+						"_text": "The string to store"
+					}
+				}
+			},
+			"title": "SimpleStorage",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Demonstrates data storage patterns in Solidity",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"SimpleStorage.sol": "SimpleStorage"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"SimpleStorage.sol": {
+			"keccak256": "0x2f0a2346e6eceb58f7ca6b39c49db75d58cc474af58e804411998b42e7a9fb5a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4114fc1b9130a7ca4a107ad68d313a22ba217410885d12241f3b8f089a02f48b",
+				"dweb:/ipfs/QmXx2Drppwrze2Ytq3QfYpGBr2azZvs4Lfy7jSwhfnGYPh"
+			]
+		}
+	},
+	"version": 1
+}

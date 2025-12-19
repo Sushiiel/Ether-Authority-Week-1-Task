@@ -1,0 +1,162 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "oldMessage",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "updatedBy",
+						"type": "address"
+					}
+				],
+				"name": "MessageUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "greet",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "message",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					}
+				],
+				"name": "setMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "The simplest smart contract - your first step into blockchain development",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor sets the initial greeting message"
+				},
+				"getMessage()": {
+					"details": "Returns the greeting message",
+					"returns": {
+						"_0": "string The current greeting message"
+					}
+				},
+				"greet(string)": {
+					"details": "Returns a personalized greeting",
+					"params": {
+						"name": "The name to include in greeting"
+					},
+					"returns": {
+						"_0": "string A personalized greeting message"
+					}
+				},
+				"setMessage(string)": {
+					"details": "Updates the greeting message",
+					"params": {
+						"newMessage": "The new greeting to set"
+					}
+				}
+			},
+			"title": "HelloWorld",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "This contract stores and returns a greeting message",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"HelloWorld.sol": "HelloWorld"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"HelloWorld.sol": {
+			"keccak256": "0x3b492cfa567168a2c2124ca8911c0d8dd4d0fc9b51f07d92444d9954ed23631b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3177ee3d689d762a54b7553fe748799d38c2ea2ef27ccaa8ae9d233f5b5ce17c",
+				"dweb:/ipfs/QmYTfNDTo5dQbRFckcCLPg8p59KJ8LGmXZ7WRWrPjpJACd"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,568 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "grade",
+						"type": "uint256"
+					}
+				],
+				"name": "GradeAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "StudentReenrolled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"name": "StudentRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "StudentUnenrolled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "StudentUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_grade",
+						"type": "uint256"
+					}
+				],
+				"name": "addGrade",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "emailUsed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAverageGrade",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEnrolledCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "getGrades",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "getStudent",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "course",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "enrollmentDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isEnrolled",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_wallet",
+						"type": "address"
+					}
+				],
+				"name": "getStudentIdByWallet",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "reenrollStudent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_course",
+						"type": "string"
+					}
+				],
+				"name": "registerStudent",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "students",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "course",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "enrollmentDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isEnrolled",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalStudents",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					}
+				],
+				"name": "unenrollStudent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_studentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_course",
+						"type": "string"
+					}
+				],
+				"name": "updateStudent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "walletToStudentId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A decentralized student registration system",
+			"kind": "dev",
+			"methods": {
+				"addGrade(uint256,uint256)": {
+					"details": "Add a grade for a student",
+					"params": {
+						"_grade": "The grade to add (0-100)",
+						"_studentId": "The student's ID"
+					}
+				},
+				"constructor": {
+					"details": "Constructor sets deployer as admin"
+				},
+				"getAverageGrade(uint256)": {
+					"details": "Calculate average grade for a student",
+					"params": {
+						"_studentId": "The student's ID"
+					},
+					"returns": {
+						"_0": "uint256 Average grade"
+					}
+				},
+				"getEnrolledCount()": {
+					"details": "Get total number of enrolled students",
+					"returns": {
+						"_0": "uint256 Count of enrolled students"
+					}
+				},
+				"getGrades(uint256)": {
+					"details": "Get all grades for a student",
+					"params": {
+						"_studentId": "The student's ID"
+					},
+					"returns": {
+						"_0": "uint256[] Array of grades"
+					}
+				},
+				"getStudentIdByWallet(address)": {
+					"details": "Get student ID by wallet address",
+					"params": {
+						"_wallet": "The wallet address"
+					},
+					"returns": {
+						"_0": "uint256 The student ID"
+					}
+				},
+				"reenrollStudent(uint256)": {
+					"details": "Re-enroll a student",
+					"params": {
+						"_studentId": "The student's ID"
+					}
+				},
+				"registerStudent(string,string,uint256,string)": {
+					"details": "Register a new student",
+					"params": {
+						"_age": "Student's age",
+						"_course": "Course enrolled in",
+						"_email": "Student's email",
+						"_name": "Student's name"
+					},
+					"returns": {
+						"_0": "uint256 The student ID"
+					}
+				},
+				"unenrollStudent(uint256)": {
+					"details": "Unenroll a student",
+					"params": {
+						"_studentId": "The student's ID"
+					}
+				},
+				"updateStudent(uint256,string,string)": {
+					"details": "Update student information",
+					"params": {
+						"_course": "New course",
+						"_name": "New name",
+						"_studentId": "The student's ID"
+					}
+				}
+			},
+			"title": "StudentRegistration",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Register students and manage their academic records on blockchain",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"StudentRegistration.sol": "StudentRegistration"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"StudentRegistration.sol": {
+			"keccak256": "0x53dc90acf8d68d0f208ea38648d6681d27e489ffdaa1f153c92598bdd0ecb1f6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2bb69a56b19f2099bf8f9a3cfd97eb0bb8a7c2444fda634ceec5e4f5d5a1f54",
+				"dweb:/ipfs/QmSAAqFb7fzjK6TpusnarWCexNiqanxo7ZTrhovV4UpsAW"
+			]
+		}
+	},
+	"version": 1
+}

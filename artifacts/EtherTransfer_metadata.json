@@ -1,0 +1,342 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getContractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getUserBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sendEther",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalDeposits",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalWithdrawals",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferTo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"details": "Contract to demonstrate sending and receiving Ether",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor sets the contract deployer as owner"
+				},
+				"deposit()": {
+					"details": "Explicit deposit function"
+				},
+				"getContractBalance()": {
+					"details": "Get contract's total balance",
+					"returns": {
+						"_0": "uint256 The contract's ETH balance"
+					}
+				},
+				"getUserBalance(address)": {
+					"details": "Get user's balance in the contract",
+					"params": {
+						"user": "The user's address"
+					},
+					"returns": {
+						"_0": "uint256 The user's balance"
+					}
+				},
+				"ownerWithdraw(uint256)": {
+					"details": "Owner can withdraw contract balance (for emergencies)",
+					"params": {
+						"amount": "The amount to withdraw"
+					}
+				},
+				"sendEther(address,uint256)": {
+					"details": "Send ETH directly to an address (owner only)",
+					"params": {
+						"amount": "The amount to send",
+						"to": "The recipient's address"
+					}
+				},
+				"transferTo(address,uint256)": {
+					"details": "Transfer ETH from sender to another address",
+					"params": {
+						"amount": "The amount to transfer",
+						"to": "The recipient's address"
+					}
+				},
+				"withdraw(uint256)": {
+					"details": "Withdraw user's balance",
+					"params": {
+						"amount": "The amount to withdraw"
+					}
+				},
+				"withdrawAll()": {
+					"details": "Withdraw all of user's balance"
+				}
+			},
+			"title": "EtherTransfer",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deposit()": {
+					"notice": "Send ETH along with this transaction"
+				}
+			},
+			"notice": "Learn how to handle ETH transactions in smart contracts",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"EtherTransfer.sol": "EtherTransfer"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"EtherTransfer.sol": {
+			"keccak256": "0x19ea79da05cb9f177e08240404d95def623cb41ad3d070a66a559107c1a2fa35",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://51b249090055bb9bbe3dadef2cbcc266c7fa466ed0bac01c5c4bf0f293e73143",
+				"dweb:/ipfs/QmXNAgvtdZVXervUE5KzTm8K6YA1cZcg5Rp9UxYH18Hvmh"
+			]
+		}
+	},
+	"version": 1
+}

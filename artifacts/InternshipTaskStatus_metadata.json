@@ -1,0 +1,739 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "intern",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "InternRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "intern",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"name": "PointsAwarded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "assignedTo",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "weekNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "TaskCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum InternshipTaskStatus.TaskStatus",
+						"name": "newStatus",
+						"type": "uint8"
+					}
+				],
+				"name": "TaskStatusUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "submissionLink",
+						"type": "string"
+					}
+				],
+				"name": "TaskSubmitted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "feedback",
+						"type": "string"
+					}
+				],
+				"name": "TaskVerified",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_weekNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_assignedTo",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_points",
+						"type": "uint256"
+					}
+				],
+				"name": "createTask",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_intern",
+						"type": "address"
+					}
+				],
+				"name": "getCompletionPercentage",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_intern",
+						"type": "address"
+					}
+				],
+				"name": "getInternProgress",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPoints",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "completedTasks",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalTasks",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_intern",
+						"type": "address"
+					}
+				],
+				"name": "getInternTasks",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLeaderboard",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "addresses",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "points",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_taskId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTask",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "weekNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "assignedTo",
+						"type": "address"
+					},
+					{
+						"internalType": "enum InternshipTaskStatus.TaskStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "submissionLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "feedback",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "internAddresses",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "internTasks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "interns",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPoints",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "completedTasks",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mentor",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					}
+				],
+				"name": "registerIntern",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_taskId",
+						"type": "uint256"
+					}
+				],
+				"name": "startTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_taskId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_submissionLink",
+						"type": "string"
+					}
+				],
+				"name": "submitTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "taskCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tasks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "weekNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "assignedTo",
+						"type": "address"
+					},
+					{
+						"internalType": "enum InternshipTaskStatus.TaskStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createdAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "completedAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "verifiedAt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "submissionLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "feedback",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_taskId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_approved",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "_feedback",
+						"type": "string"
+					}
+				],
+				"name": "verifyTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "weekTasks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Track and manage internship tasks and progress on blockchain",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor sets deployer as mentor"
+				},
+				"createTask(string,string,uint256,address,uint256)": {
+					"details": "Create a new task (mentor only)",
+					"params": {
+						"_assignedTo": "Intern's address",
+						"_description": "Task description",
+						"_points": "Points for completion",
+						"_title": "Task title",
+						"_weekNumber": "Week number (1-12)"
+					}
+				},
+				"getCompletionPercentage(address)": {
+					"details": "Get completion percentage",
+					"params": {
+						"_intern": "The intern's address"
+					},
+					"returns": {
+						"_0": "uint256 Percentage (0-100)"
+					}
+				},
+				"getInternTasks(address)": {
+					"details": "Get all tasks for an intern",
+					"params": {
+						"_intern": "The intern's address"
+					},
+					"returns": {
+						"_0": "uint256[] Array of task IDs"
+					}
+				},
+				"getLeaderboard()": {
+					"details": "Get leaderboard (top 10 interns by points)",
+					"returns": {
+						"addresses": "Array of intern addresses",
+						"points": "Array of points"
+					}
+				},
+				"registerIntern(string,string)": {
+					"details": "Register a new intern",
+					"params": {
+						"_email": "Intern's email",
+						"_name": "Intern's name"
+					}
+				},
+				"startTask(uint256)": {
+					"details": "Start working on a task",
+					"params": {
+						"_taskId": "The task ID"
+					}
+				},
+				"submitTask(uint256,string)": {
+					"details": "Submit a completed task",
+					"params": {
+						"_submissionLink": "Link to submission (GitHub, etc.)",
+						"_taskId": "The task ID"
+					}
+				},
+				"verifyTask(uint256,bool,string)": {
+					"details": "Verify a submitted task (mentor only)",
+					"params": {
+						"_approved": "True to approve, false to request revision",
+						"_feedback": "Feedback from mentor",
+						"_taskId": "The task ID"
+					}
+				}
+			},
+			"title": "InternshipTaskStatus",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "A real-world application to track your internship progress!",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"InternshipTrackStatus.sol": "InternshipTaskStatus"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"InternshipTrackStatus.sol": {
+			"keccak256": "0xe06349cec4da48ff2614011ab6c4477149cc3a3dcf040e595acc496d68296248",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5ebf4341f949d9b7837ef507c9da4e7b016752bae24b7f5736cfbc8a916e0e05",
+				"dweb:/ipfs/QmbpH3irtvNTRu6t28ZriizhKsTaQezcNdmUiQbsXaBiBA"
+			]
+		}
+	},
+	"version": 1
+}
